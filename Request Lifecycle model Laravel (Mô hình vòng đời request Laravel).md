@@ -24,11 +24,14 @@ require __DIR__.'/../vendor/autoload.php';
 
 Đây là đoạn code để đăng ký autoload, một thành phần không thể thiếu trong framework. Nếu bạn nào chưa biết về cái này thì mình xin giải thích đơn giản. Autoload sẽ giúp chúng ta khởi tạo các class mà không cần phải require/include các file chứa class đó.
 Chẳng hạn bạn có một project với cấu trúc thư mục như sau:
+
 myproject/
 |   User.php
 |   index.php
 |   autoload.php
+
 File User.php chứa class User:
+
 <?php
 
 class User
@@ -42,6 +45,7 @@ class User
 ?>
 
 Bây giờ tại file index.php, để gọi class User ra thì cách thông thường bạn sẽ làm như thế này:
+
 <?php
 
 require_once 'User.php';
@@ -51,6 +55,7 @@ new User();
 ?>
 
 Nhưng với autoload, thì bạn không cần phải require file User.php nữa, thay vào đó:
+
 <?php
 
 require_once 'autoload.php';
@@ -58,6 +63,7 @@ require_once 'autoload.php';
 new User();
 
 ?>
+
 ### 2. Chuẩn bị để khởi động ứng dụng (Prepare to bootstrap the application)
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +103,7 @@ $app = new Illuminate\Foundation\Application(
 
 #### b. Đăng ký các interface quan trọng (Bind important interfaces)
 Các interface quan trọng bao gồm HTTP, CLI và trình xử lý ngoại lệ.
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
@@ -124,6 +131,7 @@ $app->singleton(
 );
 
 #### c. Trả về đối tượng ứng dụng (Return the application)
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
@@ -138,6 +146,7 @@ $app->singleton(
 return $app;
 
 Tới đây quá trình chuẩn bị đã hoàn tất cho việc bootstrap framework.
+
 ### 3. Chạy ứng dụng (Run the application)
 /*
 |--------------------------------------------------------------------------
@@ -165,6 +174,7 @@ $kernel->terminate($request, $response);
 
 Xử lý request
 Trả về response
+
 ## III. HTTP/Console Kernel
 Tiếp theo, request sẽ được gửi đến HTTP Kernel hoặc Console Kernel, tùy thuộc vào request được gửi từ đâu. Hiện tại chúng ta chỉ quan tâm đến HTTP Kernel nằm ở file app/Http/Kernel.php.
 

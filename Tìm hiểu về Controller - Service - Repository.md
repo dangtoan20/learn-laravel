@@ -322,14 +322,11 @@ Mô hình kiến trúc CSR tách biệt giữa các thành phần chính của m
 Mô hình CSR giúp tách biệt các thành phần, làm cho mã nguồn dễ bảo trì và cấu trúc ứng dụng rõ ràng hơn. Nó cũng cung cấp khả năng mở rộng và tái sử dụng mã.
 
 3. Lợi ích của mô hình CSR
-
 Mô hình CSR có nhiều lợi ích quan trọng trong phát triển ứng dụng web:
 
-– Tính rõ ràng: Mỗi thành phần trong mô hình có trách nhiệm rõ ràng và tách biệt. Controller xử lý yêu cầu, Service chứa logic kinh doanh, và Repository tương tác với cơ sở dữ liệu. Điều này giúp tăng tính rõ ràng và hiểu rõ vai trò của từng thành phần
-
-– Tái sử dụng mã: Với mô hình CSR, mã có thể được tái sử dụng dễ dàng. Service và Repository có thể được sử dụng lại trong các phần khác nhau của ứng dụng, giúp tiết kiệm thời gian và công sức lập trình.
-
-– Kiểm thử dễ dàng: Mô hình CSR giúp tách biệt các thành phần trong ứng dụng, làm cho việc kiểm thử trở nên dễ dàng hơn. Bạn có thể kiểm thử từng thành phần độc lập, thậm chí viết các bài kiểm thử tự động để đảm bảo tính chính xác và đáng tin cậy của mã.
+- Tính rõ ràng: Mỗi thành phần trong mô hình có trách nhiệm rõ ràng và tách biệt. Controller xử lý yêu cầu, Service chứa logic kinh doanh, và Repository tương tác với cơ sở dữ liệu. Điều này giúp tăng tính rõ ràng và hiểu rõ vai trò của từng thành phần.
+- Tái sử dụng mã: Với mô hình CSR, mã có thể được tái sử dụng dễ dàng. Service và Repository có thể được sử dụng lại trong các phần khác nhau của ứng dụng, giúp tiết kiệm thời gian và công sức lập trình.
+- Kiểm thử dễ dàng: Mô hình CSR giúp tách biệt các thành phần trong ứng dụng, làm cho việc kiểm thử trở nên dễ dàng hơn. Bạn có thể kiểm thử từng thành phần độc lập, thậm chí viết các bài kiểm thử tự động để đảm bảo tính chính xác và đáng tin cậy của mã.
 
 4. Câu hỏi thường gặp (FAQ)
 Dưới đây là một số câu hỏi thường gặp về mô hình kiến trúc CSR:

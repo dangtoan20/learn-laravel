@@ -6,9 +6,9 @@ Sự kết hợp giữa Service và Repository Pattern trong Laravel mang lại 
 Cách triển khai Service trong Laravel khá đơn giản. Đầu tiên, chúng ta có thể tạo một file Service mới bằng lệnh “php artisan make:service TenService”. Sau đó, chúng ta triển khai logic xử lý trong class Service này. Ví dụ, nếu chúng ta có một Service để tạo mới một bài viết trong ứng dụng, chúng ta có thể triển khai hàm “create” trong class Service tương ứng.
 Cách triển khai Repository Pattern trong Laravel cũng tương đối đơn giản. Chúng ta có thể tạo một class Repository mới, sau đó triển khai các phương thức cần thiết để truy cập dữ liệu từ cơ sở dữ liệu. Laravel hỗ trợ cơ chế Dependency Injection để liên kết giữa Service và Repository, giúp chúng ta dễ dàng sử dụng Repository trong Service.
 Quy trình thực hiện các thao tác CRUD bằng Service và Repository Pattern trong Laravel như sau:
-– Đầu tiên, chúng ta sử dụng Service để gọi các phương thức cụ thể để thực hiện các thao tác CRUD trên dữ liệu. Ví dụ, chúng ta có thể sử dụng Service để tạo mới, cập nhật, xóa hoặc truy vấn dữ liệu từ cơ sở dữ liệu.
-– Trong Service, chúng ta sẽ sử dụng Dependency Injection để kết nối với Repository tương ứng để truy cập dữ liệu. Điều này giúp tách biệt logic xử lý trong Service và logic truy cập dữ liệu trong Repository.
-– Trong Repository, chúng ta triển khai các phương thức cần thiết để truy vấn dữ liệu từ cơ sở dữ liệu. Laravel cung cấp các phương thức cơ bản như tìm kiếm theo id, tạo mới, cập nhật và xóa dữ liệu, giúp chúng ta thao tác với cơ sở dữ liệu dễ dàng hơn.
+- Đầu tiên, chúng ta sử dụng Service để gọi các phương thức cụ thể để thực hiện các thao tác CRUD trên dữ liệu. Ví dụ, chúng ta có thể sử dụng Service để tạo mới, cập nhật, xóa hoặc truy vấn dữ liệu từ cơ sở dữ liệu.
+- Trong Service, chúng ta sẽ sử dụng Dependency Injection để kết nối với Repository tương ứng để truy cập dữ liệu. Điều này giúp tách biệt logic xử lý trong Service và logic truy cập dữ liệu trong Repository.
+- Trong Repository, chúng ta triển khai các phương thức cần thiết để truy vấn dữ liệu từ cơ sở dữ liệu. Laravel cung cấp các phương thức cơ bản như tìm kiếm theo id, tạo mới, cập nhật và xóa dữ liệu, giúp chúng ta thao tác với cơ sở dữ liệu dễ dàng hơn.
 Còn đây là một số ví dụ cụ thể về việc sử dụng Service và Repository Pattern trong Laravel:
 1. Ví dụ về Service Repository pattern: Chúng ta có thể tạo một Service là UserService để quản lý người dùng, trong đó chúng ta sử dụng UserRepository để truy cập dữ liệu người dùng từ cơ sở dữ liệu.
 2. Ví dụ về Repository Laravel 9: Laravel 9 hỗ trợ việc tạo Repository một cách dễ dàng bằng cách sử dụng lệnh “php artisan make:repository TenRepository”.
@@ -308,16 +308,16 @@ Trong phát triển phần mềm, kiến trúc là một phần quan trọng đ�
 1. Giới thiệu về mô hình CSR
 Mô hình kiến trúc CSR tách biệt giữa các thành phần chính của một ứng dụng web:
 
-– Controller: Điều khiển luồng dữ liệu giữa người dùng và hệ thống. Controller làm nhiệm vụ xử lý các yêu cầu từ phía người dùng, kiểm tra hợp lệ và gọi các dịch vụ tương ứng để xử lý.
-– Service: Chứa các logic kinh doanh và quy tắc xử lý gốc của ứng dụng. Service nhận các yêu cầu từ Controller, thực hiện các nghiệp vụ kinh doanh và gọi Repository để truy cập cơ sở dữ liệu.
-– Repository: Dùng để truy cập, truy vấn, và ghi dữ liệu vào cơ sở dữ liệu. Repository ẩn chi tiết kỹ thuật liên quan đến cơ sở dữ liệu và cung cấp các phương thức tương tác với cơ sở dữ liệu.
+- Controller: Điều khiển luồng dữ liệu giữa người dùng và hệ thống. Controller làm nhiệm vụ xử lý các yêu cầu từ phía người dùng, kiểm tra hợp lệ và gọi các dịch vụ tương ứng để xử lý.
+- Service: Chứa các logic kinh doanh và quy tắc xử lý gốc của ứng dụng. Service nhận các yêu cầu từ Controller, thực hiện các nghiệp vụ kinh doanh và gọi Repository để truy cập cơ sở dữ liệu.
+- Repository: Dùng để truy cập, truy vấn, và ghi dữ liệu vào cơ sở dữ liệu. Repository ẩn chi tiết kỹ thuật liên quan đến cơ sở dữ liệu và cung cấp các phương thức tương tác với cơ sở dữ liệu.
 
 2. Cách triển khai mô hình CSR
 Để triển khai mô hình CSR, bạn cần tuân theo các nguyên tắc sau:
 
-– Controller nhận yêu cầu từ người dùng, xác thực và kiểm tra tính hợp lệ của dữ liệu đầu vào. Sau đó, Controller gọi dịch vụ Service tương ứng để xử lý yêu cầu.
-– Service xử lý logic kinh doanh, gọi Repository để truy cập cơ sở dữ liệu và trả về kết quả cho Controller.
-– Repository chứa các phương thức tương tác với cơ sở dữ liệu, như truy vấn, ghi và cập nhật dữ liệu. Repository không nên chứa logic kinh doanh.
+- Controller nhận yêu cầu từ người dùng, xác thực và kiểm tra tính hợp lệ của dữ liệu đầu vào. Sau đó, Controller gọi dịch vụ Service tương ứng để xử lý yêu cầu.
+- Service xử lý logic kinh doanh, gọi Repository để truy cập cơ sở dữ liệu và trả về kết quả cho Controller.
+- Repository chứa các phương thức tương tác với cơ sở dữ liệu, như truy vấn, ghi và cập nhật dữ liệu. Repository không nên chứa logic kinh doanh.
 
 Mô hình CSR giúp tách biệt các thành phần, làm cho mã nguồn dễ bảo trì và cấu trúc ứng dụng rõ ràng hơn. Nó cũng cung cấp khả năng mở rộng và tái sử dụng mã.
 
